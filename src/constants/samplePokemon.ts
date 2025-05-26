@@ -55,4 +55,4 @@ export const samplePokemon = [
       'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png',
     types: ['psychic'],
   },
-] as const;
+];
