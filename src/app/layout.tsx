@@ -3,8 +3,8 @@ import '@/styles/globals.css';
 import Provider from './provider';
 
 export const metadata: Metadata = {
-  title: 'pokedocs',
-  description: 'pokedocs',
+  title: 'Pokédocs',
+  description: 'Pokédocs',
 };
 
 const RootLayout = ({
