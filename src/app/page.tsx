@@ -1,5 +1,7 @@
-const Home = () => {
-  return <div></div>;
+import { MainPage } from '@/pageContainer';
+
+const Main = () => {
+  return <MainPage />;
 };
 
-export default Home;
+export default Main;
