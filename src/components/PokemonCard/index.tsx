@@ -4,8 +4,9 @@ import { cn } from '@/libs/style';
 import { capitalizeFirst, formatPokemonId } from '@/utils';
 import Image from 'next/image';
 import { typeColors, typeHoverColors, typeIdColors } from '@/constants';
+import { Pokemon } from '@/types';
 
-const PokemonCard = ({ pokemon }) => {
+const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
   return (
     <Link href={`/pokemon/${pokemon.id}`}>
       <Card
