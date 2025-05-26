@@ -1,10 +1,73 @@
-import Link from 'next/link';
 import { Badge, Card, CardContent } from '../ui';
-import { cn } from '@/libs/style';
 import { capitalizeFirst, formatPokemonId } from '@/utils';
+
 import Image from 'next/image';
-import { typeColors, typeHoverColors, typeIdColors } from '@/constants';
+import Link from 'next/link';
 import { Pokemon } from '@/types';
+import { cn } from '@/libs/style';
+
+const typeColors: Record<string, string> = {
+  normal: 'from-gray-300 to-gray-400',
+  fire: 'from-red-400 to-orange-500',
+  water: 'from-blue-400 to-cyan-500',
+  electric: 'from-yellow-300 to-yellow-500',
+  grass: 'from-green-400 to-emerald-500',
+  ice: 'from-blue-200 to-cyan-300',
+  fighting: 'from-red-600 to-red-700',
+  poison: 'from-purple-400 to-purple-600',
+  ground: 'from-yellow-600 to-amber-700',
+  flying: 'from-indigo-300 to-blue-400',
+  psychic: 'from-pink-400 to-purple-500',
+  bug: 'from-green-300 to-lime-500',
+  rock: 'from-yellow-700 to-amber-800',
+  ghost: 'from-purple-600 to-indigo-700',
+  dragon: 'from-indigo-600 to-purple-700',
+  dark: 'from-gray-700 to-gray-900',
+  steel: 'from-gray-400 to-slate-600',
+  fairy: 'from-pink-300 to-rose-400',
+};
+
+const typeIdColors: Record<string, string> = {
+  normal: 'from-gray-500 to-gray-600',
+  fire: 'from-red-500 to-red-600',
+  water: 'from-blue-500 to-blue-600',
+  electric: 'from-yellow-500 to-yellow-600',
+  grass: 'from-green-500 to-green-600',
+  ice: 'from-cyan-400 to-cyan-500',
+  fighting: 'from-red-700 to-red-800',
+  poison: 'from-purple-500 to-purple-600',
+  ground: 'from-amber-600 to-amber-700',
+  flying: 'from-sky-400 to-sky-500',
+  psychic: 'from-pink-500 to-pink-600',
+  bug: 'from-lime-500 to-lime-600',
+  rock: 'from-stone-600 to-stone-700',
+  ghost: 'from-violet-600 to-violet-700',
+  dragon: 'from-indigo-600 to-indigo-700',
+  dark: 'from-slate-700 to-slate-800',
+  steel: 'from-slate-500 to-slate-600',
+  fairy: 'from-rose-400 to-rose-500',
+};
+
+const typeHoverColors: Record<string, string> = {
+  normal: 'group-hover:text-gray-600',
+  fire: 'group-hover:text-red-600',
+  water: 'group-hover:text-blue-600',
+  electric: 'group-hover:text-yellow-600',
+  grass: 'group-hover:text-green-600',
+  ice: 'group-hover:text-cyan-600',
+  fighting: 'group-hover:text-red-700',
+  poison: 'group-hover:text-purple-600',
+  ground: 'group-hover:text-amber-700',
+  flying: 'group-hover:text-sky-600',
+  psychic: 'group-hover:text-pink-600',
+  bug: 'group-hover:text-lime-600',
+  rock: 'group-hover:text-stone-700',
+  ghost: 'group-hover:text-violet-700',
+  dragon: 'group-hover:text-indigo-700',
+  dark: 'group-hover:text-slate-800',
+  steel: 'group-hover:text-slate-600',
+  fairy: 'group-hover:text-rose-500',
+};
 
 const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
   return (
