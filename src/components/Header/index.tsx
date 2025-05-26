@@ -27,7 +27,7 @@ const Header = () => {
         Pokédocs
       </h1>
       <p className={cn('text-xl', 'font-medium', 'text-purple-200', 'text-center')}>
-        ✨ Discover the magical world of Pokémon ✨
+        ✨ Check out Pokémon information at a glance. ✨
       </p>
       <div className={cn('mt-4', 'flex', 'items-center', 'justify-center', 'space-x-2')}>
         <Star className={cn('h-5', 'w-5', 'fill-current', 'text-yellow-400')} />
