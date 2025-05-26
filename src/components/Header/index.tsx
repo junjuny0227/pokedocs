@@ -26,7 +26,7 @@ const Header = () => {
       >
         Pokédocs
       </h1>
-      <p className={cn('text-xl', 'font-medium', 'text-purple-200')}>
+      <p className={cn('text-xl', 'font-medium', 'text-purple-200', 'text-center')}>
         ✨ Discover the magical world of Pokémon ✨
       </p>
       <div className={cn('mt-4', 'flex', 'items-center', 'justify-center', 'space-x-2')}>
